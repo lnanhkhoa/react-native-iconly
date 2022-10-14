@@ -36,7 +36,8 @@
     "lint": "eslint \"src/**/*\""
   },
   "peerDependencies": {
-    "react": "^16.8.6 || ^17"
+    "react": "*",
+    "react-native-svg": "*"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
@@ -62,14 +63,12 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "react": "^16.13.1",
+    "react-native-svg": "^13.4.0",
     "react-dom": "^16.13.1",
     "react-scripts": "^4.0.3",
     "typescript": "^4.2.3"
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "react-native-svg": "^12.1.0"
-  }
+  ]
 }
