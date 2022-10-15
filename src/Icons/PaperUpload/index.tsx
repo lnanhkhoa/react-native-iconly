@@ -11,7 +11,11 @@ type Props = {
 };
 
 const PaperUpload = ({
-  color, secondaryColor, strokeWidth, opacity, set,
+  color,
+  secondaryColor,
+  strokeWidth,
+  opacity,
+  set,
 }: Props) => {
   const Bold = () => (
     <G transform="translate(3.5 2)">

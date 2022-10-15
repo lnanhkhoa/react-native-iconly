@@ -11,7 +11,11 @@ type Props = {
 };
 
 const Folder = ({
-  color, opacity, secondaryColor, strokeWidth, set,
+  color,
+  opacity,
+  secondaryColor,
+  strokeWidth,
+  set,
 }: Props) => {
   const Bold = () => (
     <G transform="translate(2 2)">

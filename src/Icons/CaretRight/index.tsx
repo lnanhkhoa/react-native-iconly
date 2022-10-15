@@ -1,4 +1,4 @@
-import { G, Path, Defs } from 'react-native-svg';
+import { G, Path, Defs, ClipPath } from 'react-native-svg';
 import * as React from 'react';
 import withIcon from '../../lib/withIcon';
 
@@ -11,7 +11,11 @@ type Props = {
 };
 
 const CaretRight = ({
-  color, secondaryColor, strokeWidth, opacity, set,
+  color,
+  secondaryColor,
+  strokeWidth,
+  opacity,
+  set,
 }: Props) => {
   const Bold = () => (
     <G transform="translate(3 6.5)">
@@ -24,9 +28,13 @@ const CaretRight = ({
   const Bulk = () => (
     <>
       <Defs>
-        <clipPath id="clip-Path">
-          <Path d="M0,0H10.9V8.939H0Z" transform="translate(0 0.534)" fill="none" />
-        </clipPath>
+        <ClipPath id="clip-Path">
+          <Path
+            d="M0,0H10.9V8.939H0Z"
+            transform="translate(0 0.534)"
+            fill="none"
+          />
+        </ClipPath>
       </Defs>
       <G transform="translate(3 17.5) rotate(-90)">
         <Path
@@ -36,8 +44,12 @@ const CaretRight = ({
           opacity={opacity}
         />
         <G transform="translate(0 7.944)">
-          <Path d="M0,0H10.9V8.939H0Z" transform="translate(0 0.534)" fill="none" />
-          <G clipPath="url(#clip-Path)">
+          <Path
+            d="M0,0H10.9V8.939H0Z"
+            transform="translate(0 0.534)"
+            fill="none"
+          />
+          <G ClipPath="url(#clip-Path)">
             <Path
               d="M10.9.711a.715.715,0,0,1-.109.379L6.05,8.608a.71.71,0,0,1-1.2,0L.109,1.089A.712.712,0,0,1,.711,0h9.476A.713.713,0,0,1,10.9.711"
               transform="translate(0 0.534)"

@@ -22,7 +22,14 @@ const defaultValue: Theme = {
 export const IconlyContext = createContext(defaultValue);
 IconlyContext.displayName = 'IconlyIconlyContext';
 
-export const IconlyProvider = ({ children, primaryColor, secondaryColor, set, size, stroke }: Props) => {
+export const IconlyProvider = ({
+  children,
+  primaryColor,
+  secondaryColor,
+  set,
+  size,
+  stroke,
+}: Props) => {
   const value = {
     primaryColor: primaryColor || 'currentColor',
     secondaryColor,
@@ -31,7 +38,9 @@ export const IconlyProvider = ({ children, primaryColor, secondaryColor, set, si
     stroke: stroke || 'regular',
   };
 
-  return <IconlyContext.Provider value={value}>{children}</IconlyContext.Provider>;
+  return (
+    <IconlyContext.Provider value={value}>{children}</IconlyContext.Provider>
+  );
 };
 
 export const useIconlyTheme = () => {

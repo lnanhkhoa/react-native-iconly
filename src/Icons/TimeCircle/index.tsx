@@ -11,7 +11,11 @@ type Props = {
 };
 
 const TimeCircle = ({
-  color, secondaryColor, strokeWidth, opacity, set,
+  color,
+  secondaryColor,
+  strokeWidth,
+  opacity,
+  set,
 }: Props) => {
   const Bold = () => (
     <G transform="translate(2 2)">
@@ -23,7 +27,11 @@ const TimeCircle = ({
   );
   const Bulk = () => (
     <G transform="translate(2 2)">
-      <Path d="M20,10A10,10,0,1,1,10,0,10,10,0,0,1,20,10" fill={secondaryColor} opacity={opacity} />
+      <Path
+        d="M20,10A10,10,0,1,1,10,0,10,10,0,0,1,20,10"
+        fill={secondaryColor}
+        opacity={opacity}
+      />
       <Path
         d="M4.675,8.889a.756.756,0,0,1-.384-.1L.365,6.442A.754.754,0,0,1,0,5.8V.75a.75.75,0,0,1,1.5,0V5.371L5.06,7.494a.75.75,0,0,1-.385,1.395"
         transform="translate(8.899 4.925)"

@@ -1,6 +1,4 @@
-import {
-  Circle, Ellipse, G, Path,
-} from 'react-native-svg';
+import { Circle, Ellipse, G, Path } from 'react-native-svg';
 import * as React from 'react';
 import withIcon from '../../lib/withIcon';
 
@@ -13,7 +11,11 @@ type Props = {
 };
 
 const Search = ({
-  color, opacity, secondaryColor, strokeWidth, set,
+  color,
+  opacity,
+  secondaryColor,
+  strokeWidth,
+  set,
 }: Props) => {
   const Bold = () => (
     <G transform="translate(2 2)">
@@ -25,7 +27,14 @@ const Search = ({
   );
   const Bulk = () => (
     <G transform="translate(2 2)">
-      <Ellipse cx="8.599" cy="8.653" rx="8.599" ry="8.653" transform="translate(0 0)" fill={color} />
+      <Ellipse
+        cx="8.599"
+        cy="8.653"
+        rx="8.599"
+        ry="8.653"
+        transform="translate(0 0)"
+        fill={color}
+      />
       <Path
         d="M3.278,4.577a1.321,1.321,0,0,1-.889-.385L.352,1.812A1.088,1.088,0,0,1,.272.29h0A.974.974,0,0,1,1.66.29L4.221,2.339a1.348,1.348,0,0,1,.291,1.431,1.335,1.335,0,0,1-1.18.851Z"
         transform="translate(15.397 15.379)"
@@ -44,7 +53,12 @@ const Search = ({
       strokeMiterlimit={10}
       strokeWidth={strokeWidth}
     >
-      <Circle cx={8.989} cy={8.989} r={8.989} transform="translate(.778 .778)" />
+      <Circle
+        cx={8.989}
+        cy={8.989}
+        r={8.989}
+        transform="translate(.778 .778)"
+      />
       <Path d="M16.018 16.485L19.542 20" />
     </G>
   );

@@ -1,25 +1,22 @@
 {
   "name": "react-native-iconly",
-  "version": "1.0.11",
+  "version": "1.0.0",
   "description": "React native component for Iconly icons",
-  "author": "otaviomad",
+  "author": "Khoa Le <lnanhkhoa303@gmail.com> (https://github.com/lnanhkhoa)",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/otaviomad/react-native-iconly"
-  },
-  "main": "dist/index.js",
-  "module": "dist/index.modern.js",
-  "types": "dist/index",
-  "source": "src/index.js",
-  "sideEffects": false,
-  "engines": {
-    "node": ">=10"
-  },
-  "bugs": {
-    "url": "https://github.com/otaviomad/react-native-iconly/issues"
-  },
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/index.d.ts",
+  "source": "src/index",
+  "react-native": "src/index",
   "homepage": "https://react-iconly.jrgarciadev.com",
+  "repository": "https://github.com/lnanhkhoa/react-native-iconly",
+  "bugs": {
+    "url": "https://github.com/lnanhkhoa/react-native-iconly/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "keywords": [
     "react",
     "react-native",
@@ -31,9 +28,14 @@
     "design"
   ],
   "scripts": {
-    "build": "tsc --jsx react-native",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "eslint \"src/**/*\""
+    "prepare": "bob build",
+    "typescript": "tsc --noEmit",
+    "release": "release-it",
+    "example": "yarn --cwd example",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\" \"src/**/*.tsx\"",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "test": "jest",
+    "bootstrap": "yarn example && yarn"
   },
   "peerDependencies": {
     "react": "*",
@@ -41,34 +43,124 @@
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
-    "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
-    "@typescript-eslint/eslint-plugin": "^4.21.0",
-    "@typescript-eslint/parser": "^4.21.0",
-    "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-flowtype": "^5.6.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.23.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-typescript": "^0.14.0",
-    "eslint-plugin-unused-imports": "^1.1.1",
     "gh-pages": "^2.2.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.2.1",
-    "react": "^16.13.1",
     "react-native-svg": "^13.4.0",
     "react-dom": "^16.13.1",
     "react-scripts": "^4.0.3",
-    "typescript": "^4.2.3"
+    "@arkweid/lefthook": "^0.7.7",
+    "@babel/eslint-parser": "^7.18.9",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@react-native-community/eslint-config": "^3.0.3",
+    "@release-it/conventional-changelog": "^5.1.1",
+    "@types/jest": "^28.1.2",
+    "@types/react": "~17.0.21",
+    "@types/react-native": "0.68.0",
+    "@types/use-sync-external-store": "^0.0.3",
+    "commitlint": "^17.1.2",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^28.1.1",
+    "pod-install": "^0.1.38",
+    "prettier": "^2.7.1",
+    "react": "17.0.2",
+    "react-native": "0.68.2",
+    "react-native-builder-bob": "^0.19.1",
+    "release-it": "^15.5.0",
+    "typescript": "^4.8.4"
+  },
+  "resolutions": {
+    "@types/react": "17.0.21"
   },
   "files": [
-    "dist"
-  ]
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "!lib/typescript/example",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@babel/eslint-parser",
+    "extends": [
+      "@react-native-community",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "quoteProps": "consistent",
+          "singleQuote": true,
+          "tabWidth": 2,
+          "trailingComma": "es5",
+          "useTabs": false
+        }
+      ],
+      "react/no-unstable-nested-components": "off"
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
 }

@@ -11,7 +11,11 @@ type Props = {
 };
 
 const Activity = ({
-  color, secondaryColor, strokeWidth, opacity, set,
+  color,
+  secondaryColor,
+  strokeWidth,
+  opacity,
+  set,
 }: Props) => {
   const Bold = () => (
     <G transform="translate(2 2)">
@@ -29,7 +33,14 @@ const Activity = ({
         transform="translate(0 2)"
         fill={color}
       />
-      <Circle cx="2.5" cy="2.5" r="2.5" transform="translate(15)" fill={secondaryColor} opacity={opacity} />
+      <Circle
+        cx="2.5"
+        cy="2.5"
+        r="2.5"
+        transform="translate(15)"
+        fill={secondaryColor}
+        opacity={opacity}
+      />
     </G>
   );
   const Light = () => (

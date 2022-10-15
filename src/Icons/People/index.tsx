@@ -11,7 +11,11 @@ type Props = {
 };
 
 const People = ({
-  color, secondaryColor, strokeWidth, opacity, set,
+  color,
+  secondaryColor,
+  strokeWidth,
+  opacity,
+  set,
 }: Props) => {
   const Bold = () => (
     <G transform="translate(1 4)">

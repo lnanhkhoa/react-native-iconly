@@ -11,7 +11,11 @@ type Props = {
 };
 
 const ChevronLeft = ({
-  color, secondaryColor, strokeWidth, opacity, set,
+  color,
+  secondaryColor,
+  strokeWidth,
+  opacity,
+  set,
 }: Props) => {
   const Bold = () => (
     <G transform="translate(7 6)">

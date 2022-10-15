@@ -13,25 +13,52 @@ export interface Props extends SvgProps {
   stroke?: 'light' | 'regular' | 'bold';
 }
 
-function withIcon(Component: React.ElementType): React.MemoExoticComponent<(props: Props) => JSX.Element> {
-  const IconWrapper = ({ size, label, primaryColor, secondaryColor, filled, set, stroke, ...restProps }: Props) => {
+function withIcon(
+  Component: React.ElementType
+): React.MemoExoticComponent<(props: Props) => JSX.Element> {
+  const IconWrapper = ({
+    size,
+    label,
+    primaryColor,
+    secondaryColor,
+    filled,
+    set,
+    stroke,
+    ...restProps
+  }: Props) => {
     const theme = useContext(IconlyContext);
-    const iconSize = getSize(size) || getSize(getThemeProp('size', theme) as Theme['size']) || '24px';
+    const iconSize =
+      getSize(size) ||
+      getSize(getThemeProp('size', theme) as Theme['size']) ||
+      '24px';
 
-    const iconPrimaryColor = primaryColor || getThemeProp('primaryColor', theme) || 'currentColor';
+    const iconPrimaryColor =
+      primaryColor || getThemeProp('primaryColor', theme) || 'currentColor';
 
     const iconSecondaryColor =
-      secondaryColor || getThemeProp('secondaryColor', theme) || iconPrimaryColor || 'currentColor';
+      secondaryColor ||
+      getThemeProp('secondaryColor', theme) ||
+      iconPrimaryColor ||
+      'currentColor';
 
     return (
-      <Svg width={iconSize} height={iconSize} viewBox="0 0 24 24" aria-label={label || undefined} {...restProps}>
+      <Svg
+        width={iconSize}
+        height={iconSize}
+        viewBox="0 0 24 24"
+        aria-label={label || undefined}
+        {...restProps}
+      >
         <Component
           color={iconPrimaryColor}
           opacity={getOpacity(primaryColor, secondaryColor)}
           secondaryColor={iconSecondaryColor}
           set={filled ? 'bold' : set || getThemeProp('set', theme) || 'light'}
           strokeWidth={
-            stroke ? getStroke(stroke) : getStroke(getThemeProp('stroke', theme) as Theme['stroke']) || '1.5px'
+            stroke
+              ? getStroke(stroke)
+              : getStroke(getThemeProp('stroke', theme) as Theme['stroke']) ||
+                '1.5px'
           }
         />
       </Svg>

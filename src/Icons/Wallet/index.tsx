@@ -11,7 +11,11 @@ type Props = {
 };
 
 const Wallet = ({
-  color, opacity, secondaryColor, strokeWidth, set,
+  color,
+  opacity,
+  secondaryColor,
+  strokeWidth,
+  set,
 }: Props) => {
   const Bold = () => (
     <G transform="translate(2 3)">
@@ -34,7 +38,14 @@ const Wallet = ({
         fill={secondaryColor}
         opacity={opacity}
       />
-      <Circle id="Oval" cx="1" cy="1" r="1" transform="translate(15 7.9)" fill={color} />
+      <Circle
+        id="Oval"
+        cx="1"
+        cy="1"
+        r="1"
+        transform="translate(15 7.9)"
+        fill={color}
+      />
     </G>
   );
   const Light = () => (

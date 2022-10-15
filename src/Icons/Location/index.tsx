@@ -1,6 +1,4 @@
-import {
-  Circle, Ellipse, G, Path,
-} from 'react-native-svg';
+import { Circle, Ellipse, G, Path } from 'react-native-svg';
 import * as React from 'react';
 import withIcon from '../../lib/withIcon';
 
@@ -13,7 +11,11 @@ type Props = {
 };
 
 const Location = ({
-  color, secondaryColor, strokeWidth, opacity, set,
+  color,
+  secondaryColor,
+  strokeWidth,
+  opacity,
+  set,
 }: Props) => {
   const Bold = () => (
     <G transform="translate(3.5 2)">
@@ -30,7 +32,15 @@ const Location = ({
         transform="translate(0)"
         fill={color}
       />
-      <Ellipse cx="5" cy="1" rx="5" ry="1" transform="translate(2 18)" fill={secondaryColor} opacity={opacity} />
+      <Ellipse
+        cx="5"
+        cy="1"
+        rx="5"
+        ry="1"
+        transform="translate(2 18)"
+        fill={secondaryColor}
+        opacity={opacity}
+      />
     </G>
   );
 

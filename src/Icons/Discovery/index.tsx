@@ -11,7 +11,11 @@ type Props = {
 };
 
 const Discovery = ({
-  color, secondaryColor, strokeWidth, opacity, set,
+  color,
+  secondaryColor,
+  strokeWidth,
+  opacity,
+  set,
 }: Props) => {
   const Bold = () => (
     <G transform="translate(2 2)">
@@ -23,7 +27,11 @@ const Discovery = ({
   );
   const Bulk = () => (
     <G transform="translate(2 2)">
-      <Path d="M20,10A10,10,0,1,1,10,0,10,10,0,0,1,20,10" fill={secondaryColor} opacity={opacity} />
+      <Path
+        d="M20,10A10,10,0,1,1,10,0,10,10,0,0,1,20,10"
+        fill={secondaryColor}
+        opacity={opacity}
+      />
       <Path
         d="M7.742.592l-1.62,5.12a.651.651,0,0,1-.44.441l-5.1,1.6a.448.448,0,0,1-.56-.56l1.6-5.13a.668.668,0,0,1,.44-.44l5.12-1.6a.449.449,0,0,1,.56.57"
         transform="translate(6.118 6.113)"

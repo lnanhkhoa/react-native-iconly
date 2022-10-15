@@ -10,9 +10,7 @@ type Props = {
   strokeWidth?: string | number;
 };
 
-const Hide = ({
-  color, secondaryColor, strokeWidth, opacity, set,
-}: Props) => {
+const Hide = ({ color, secondaryColor, strokeWidth, opacity, set }: Props) => {
   const Bold = () => (
     <G transform="translate(2 3.5)">
       <Path

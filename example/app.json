@@ -1,0 +1,23 @@
+{
+  "name": "react-native-iconly-example",
+  "displayName": "react-native-iconly Example",
+  "expo": {
+    "name": "react-native-iconly-example",
+    "slug": "react-native-iconly-example",
+    "description": "Example app for react-native-iconly",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "jsEngine": "hermes",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

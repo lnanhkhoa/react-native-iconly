@@ -11,7 +11,11 @@ type Props = {
 };
 
 const Bookmark = ({
-  color, opacity, secondaryColor, strokeWidth, set,
+  color,
+  opacity,
+  secondaryColor,
+  strokeWidth,
+  set,
 }: Props) => {
   const Bold = () => (
     <G transform="translate(4 2)">
