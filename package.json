@@ -1,6 +1,6 @@
 {
-  "name": "react-native-iconly",
-  "version": "1.0.0",
+  "name": "@lnanhkhoa/react-native-iconly",
+  "version": "2.2.3",
   "description": "React native component for Iconly icons",
   "author": "Khoa Le <lnanhkhoa303@gmail.com> (https://github.com/lnanhkhoa)",
   "license": "MIT",
@@ -15,7 +15,8 @@
     "url": "https://github.com/lnanhkhoa/react-native-iconly/issues"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "keywords": [
     "react",

@@ -2,10 +2,10 @@
 
 [![NPM](https://img.shields.io/npm/v/react-native-iconly.svg)](https://www.npmjs.com/package/react-native-iconly)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![npm downloads](https://img.shields.io/npm/dm/react-native-iconly.svg?style=flat-round)](https://www.npmjs.com/package/react-native-iconly)
+[![npm downloads](https://img.shields.io/npm/dm/react-native-iconly.svg?style=flat-round)](https://www.npmjs.com/package/@lnanhkhoa/react-native-iconly)
 
 
-**react-native-iconly** is a fork of [react-iconly](https://www.npmjs.com/package/react-iconly) that is very half-assedly put together and rushed to completion using some very manual scripts. It uses [react-native-svg](https://www.npmjs.com/package/react-native-svg) as a substitute for the original html svg backend. It also uses typescript instead of javascript.
+**@lnanhkhoa/react-native-iconly** is a fork of [react-iconly](https://www.npmjs.com/package/react-iconly) that is very half-assedly put together and rushed to completion using some very manual scripts. It uses [react-native-svg](https://www.npmjs.com/package/react-native-svg) as a substitute for the original html svg backend. It also uses typescript instead of javascript.
 
 ## READ THIS
 This was very quickly put together. Some things may not work. I may update this in the future. Use at your own discretion.
@@ -23,17 +23,17 @@ This was very quickly put together. Some things may not work. I may update this 
 - Curved (New)
 
 ### Installation
-    yarn add react-native-iconly
+    yarn add @lnanhkhoa/react-native-iconly
 
   or
 
-    npm i react-native-iconly
+    npm i @lnanhkhoa/react-native-iconly
 
 ### Usage
 
 ```jsx
 import React from 'react';
-import { Home } from 'react-native-iconly';
+import { Home } from '@lnanhkhoa/react-native-iconly';
 
 const App = () => {
   return <Home color="#A1D808" />
@@ -48,7 +48,7 @@ If you set specific props for each Icon the Provider properties will be overwrit
 
 ```jsx
 import React from 'react';
-import { IconlyProvider, Home, Notification } from 'react-native-iconly';
+import { IconlyProvider, Home, Notification } from '@lnanhkhoa/react-native-iconly';
 
 const App = () => {
   return (
@@ -70,7 +70,7 @@ You can also include the whole icon pack:
 
 ```jsx
 import React from 'react';
-import * as IconlyPack from 'react-native-iconly';
+import * as IconlyPack from '@lnanhkhoa/react-native-iconly';
 
 const App = () => {
   return <IconlyPack.Home set="bulk" primaryColor="blueviolet" secondaryColor="blue" stroke="bold" size="xlarge"/>
@@ -83,7 +83,7 @@ Custom style example
 
 ```jsx
 import React from 'react';
-import { Send } from 'react-native-iconly';
+import { Send } from '@lnanhkhoa/react-native-iconly';
 
 const App = () => {
   return <Send style={{ transform: 'rotate(45deg)' }} primaryColor="red" stroke="bold" size="xlarge"/>
@@ -109,4 +109,4 @@ export default App;
 
 ## License
 
-MIT [jrgarciadev](https://github.com/jrgarciadev) and [otaviomad](https://github.com/otaviomad)
+MIT [jrgarciadev](https://github.com/jrgarciadev), [otaviomad](https://github.com/otaviomad) and [lnanhkhoa](https://github.com/lnanhkhoa)
